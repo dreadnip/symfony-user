@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="2YSz45W" resname="account.mail.confirm.title">
+        <source>account.mail.confirm.title</source>
+        <target>__account.mail.confirm.title</target>
+      </trans-unit>
+      <trans-unit id="hd8nd7A" resname="account.mail.resrt.title">
+        <source>account.mail.resrt.title</source>
+        <target>__account.mail.resrt.title</target>
+      </trans-unit>
+      <trans-unit id="JxT_Ayb" resname="account.mail.thanksForRegistering">
+        <source>account.mail.thanksForRegistering</source>
+        <target>__account.mail.thanksForRegistering</target>
+      </trans-unit>
+      <trans-unit id="R49Ub4I" resname="account.mail.confirmAccount">
+        <source>account.mail.confirmAccount</source>
+        <target>__account.mail.confirmAccount</target>
+      </trans-unit>
+      <trans-unit id="_vYqvIO" resname="account.mail.linkDoesNotworkCopyLink">
+        <source>account.mail.linkDoesNotworkCopyLink</source>
+        <target>__account.mail.linkDoesNotworkCopyLink</target>
+      </trans-unit>
+      <trans-unit id="CFvXOs9" resname="account.mail.reset">
+        <source>account.mail.reset</source>
+        <target>__account.mail.reset</target>
+      </trans-unit>
+      <trans-unit id="Bn6yTIX" resname="action.forgot_password">
+        <source>action.forgot_password</source>
+        <target>__action.forgot_password</target>
+      </trans-unit>
+      <trans-unit id="Yskrkpd" resname="Invalid confirmation token.">
+        <source>Invalid confirmation token.</source>
+        <target>Invalid confirmation token.</target>
+      </trans-unit>
+      <trans-unit id="NzUPna0" resname="User confirmed.">
+        <source>User confirmed.</source>
+        <target>User confirmed.</target>
+      </trans-unit>
+      <trans-unit id="1jJHtFL" resname="Invalid reset token.">
+        <source>Invalid reset token.</source>
+        <target>Invalid reset token.</target>
+      </trans-unit>
+      <trans-unit id="E.eId0i" resname="New password set.">
+        <source>New password set.</source>
+        <target>New password set.</target>
+      </trans-unit>
+      <trans-unit id="JtIXtI." resname="Password reset sent.">
+        <source>Password reset sent.</source>
+        <target>Password reset sent.</target>
+      </trans-unit>
+      <trans-unit id="A5XgyDV" resname="User registered. Check your email to confirm your account.">
+        <source>User registered. Check your email to confirm your account.</source>
+        <target>User registered. Check your email to confirm your account.</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="XiuOllA" resname="Sign up">
+        <source>Sign up</source>
+        <target>Sign up</target>
+      </trans-unit>
+      <trans-unit id="u0L4zVJ" resname="Forgot password">
+        <source>Forgot password</source>
+        <target>Forgot password</target>
+      </trans-unit>
+      <trans-unit id="FV_BbAQ" resname="Submit">
+        <source>Submit</source>
+        <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password">
+        <source>Reset your password</source>
+        <target>Reset your password</target>
+      </trans-unit>
+      <trans-unit id="v9QCsvb" resname="Sign in">
+        <source>Sign in</source>
+        <target>Sign in</target>
+      </trans-unit>
+      <trans-unit id="6M_m_dF" resname="No account?">
+        <source>No account?</source>
+        <target>No account?</target>
+      </trans-unit>
+      <trans-unit id="JikDho6" resname="Sign up here">
+        <source>Sign up here</source>
+        <target>Sign up here</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password">
+        <source>I forgot my password</source>
+        <target>I forgot my password</target>
+      </trans-unit>
+      <trans-unit id="_TJnqhH" resname="Remember me">
+        <source>Remember me</source>
+        <target>Remember me</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

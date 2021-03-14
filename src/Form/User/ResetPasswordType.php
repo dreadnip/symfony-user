@@ -2,7 +2,6 @@
 
 namespace App\Form\User;
 
-use App\DataTransferObject\User\UserDataTransferObject;
 use App\Message\User\ResetPassword;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -20,8 +19,8 @@ class ResetPasswordType extends AbstractType
                 RepeatedType::class,
                 [
                     'type' => PasswordType::class,
-                    'first_options'  => ['label' => 'label.password'],
-                    'second_options' => ['label' => 'label.password.repeat'],
+                    'first_options'  => ['label' => 'Password'],
+                    'second_options' => ['label' => 'Repeat password'],
                 ]
             );
     }

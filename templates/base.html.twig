@@ -11,6 +11,11 @@
                 {{ message }}
             </div>
         {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class="alert alert-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
         {% block page_title %}{% endblock %}
         {% block body %}{% endblock %}
     </body>

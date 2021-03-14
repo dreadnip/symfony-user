@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ResetPasswordController extends AbstractController
 {
@@ -21,12 +22,16 @@ class ResetPasswordController extends AbstractController
         string $token,
         Request $request,
         SessionInterface $session,
-        UserRepository $userRepository
+        UserRepository $userRepository,
+        TranslatorInterface $translator
     ): Response {
         $user = $userRepository->findOneBy(['passwordResetToken' => $token]);
 
         if (!$user instanceof User) {
-            $session->getBag('flashes')->add('error', 'invalid.token');
+            $session->getBag('flashes')->add(
+                'error',
+                $translator->trans('Invalid reset token.')
+            );
 
             return $this->redirectToRoute('login');
         }
@@ -38,7 +43,10 @@ class ResetPasswordController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->dispatchMessage($form->getData());
 
-            $session->getBag('flashes')->add('success', 'user.registered');
+            $session->getBag('flashes')->add(
+                'success',
+                $translator->trans('New password set.')
+            );
 
             return $this->redirectToRoute('login');
         }

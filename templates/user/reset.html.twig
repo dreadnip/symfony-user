@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block page_title %}
-    <h1>Reset your password</h1>
+    <h1>{{ 'Reset your password'|trans }}</h1>
 {% endblock %}
 
 {% block body %}
@@ -10,7 +10,7 @@
     {{ form_row(form.password) }}
     {{ form_rest(form) }}
 
-    <button type="submit">Reset password</button>
+    <button type="submit">{{ 'Submit'|trans }}</button>
 
     {{ form_end(form)}}
 {% endblock %}

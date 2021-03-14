@@ -31,7 +31,7 @@ final class ForgotPasswordType extends AbstractType
                 'email',
                 EmailType::class,
                 [
-                    'label' => 'label.email',
+                    'label' => 'Email',
                 ]
             );
 

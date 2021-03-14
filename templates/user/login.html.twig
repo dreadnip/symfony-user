@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block page_title %}
-    <h1>Please sign in</h1>
-    <p>Nog geen account? <a href="{{ url('register') }}">Registreer hier</a></p>
+    <h1>{{ 'Sign in'|trans }}</h1>
+    <p>{{ 'No account?'|trans }} <a href="{{ url('register') }}">{{ 'Sign up here'|trans }}</a></p>
 {% endblock %}
 
 {% block body %}
@@ -12,21 +12,21 @@
 
     {{ form_start(form)}}
     {{ form_row(form.email)}}
-
     {{ form_row(form.password)}}
+
     <small class="form-text text-muted">
-        <a href="{{ url('forgot_password') }}">{{ 'action.forgot_password'|trans }}</a>
+        <a href="{{ url('forgot_password') }}">{{ 'I forgot my password'|trans }}</a>
     </small>
 
     {{ form_rest(form)}}
 
     <div class="checkbox mb-3">
         <label>
-            <input type="checkbox" name="_remember_me"> Remember me
+            <input type="checkbox" name="_remember_me"> {{ 'Remember me'|trans }}
         </label>
     </div>
 
-    <button type="submit">Sign in</button>
+    <button type="submit">{{ 'Sign in'|trans }}</button>
 
     {{ form_end(form)}}
 {% endblock %}

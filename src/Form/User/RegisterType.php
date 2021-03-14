@@ -21,7 +21,7 @@ final class RegisterType extends AbstractType
                 'email',
                 EmailType::class,
                 [
-                    'label' => 'label.email',
+                    'label' => 'Email',
                 ]
             )
             ->add(
@@ -29,8 +29,8 @@ final class RegisterType extends AbstractType
                 RepeatedType::class,
                 [
                     'type' => PasswordType::class,
-                    'first_options'  => ['label' => 'label.password'],
-                    'second_options' => ['label' => 'label.password.repeat'],
+                    'first_options'  => ['label' => 'Password'],
+                    'second_options' => ['label' => 'Repeat password'],
                 ]
             );
     }

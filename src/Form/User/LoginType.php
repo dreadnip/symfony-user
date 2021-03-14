@@ -18,14 +18,14 @@ final class LoginType extends AbstractType
                 'email',
                 EmailType::class,
                 [
-                    'label' => 'label.email',
+                    'label' => 'Email',
                 ]
             )
             ->add(
                 'password',
                 PasswordType::class,
                 [
-                    'label' => 'label.password',
+                    'label' => 'Password',
                 ]
             );
     }
