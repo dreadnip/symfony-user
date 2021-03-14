@@ -44,6 +44,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "phpstan/phpstan": "^0.12.81",
         "symfony/debug-bundle": "^5.2",
         "symfony/maker-bundle": "^1.29",
         "symfony/phpunit-bridge": "^5.2",
