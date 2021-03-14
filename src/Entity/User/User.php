@@ -197,6 +197,11 @@ class User implements UserInterface
         $this->enabled = false;
     }
 
+    public function isEnabled(): bool
+    {
+        return $this->enabled;
+    }
+
     private function generateToken(): string
     {
         return bin2hex(random_bytes(32));
