@@ -1,0 +1,35 @@
+{% extends 'user/mails/default.html.twig' %}
+
+{% block title %}
+    <title>{{ 'account.mail.confirm.title'|trans }}</title>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ 'account.mail.confirm.title'|trans }}</h1>
+    <p>{{ 'account.mail.thanksForRegistering'|trans }}</p>
+
+    <br>
+
+    <table class="button">
+        <tbody>
+        <tr>
+            <td>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td><a href="{{ resetLink }}">{{ 'account.mail.reset'|trans }}</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <small>
+            {{ 'account.mail.linkDoesNotworkCopyLink'|trans }}:
+            <a href="{{ resetLink }}">{{ resetLink }}</a>
+        </small>
+    </p>
+{% endblock %}

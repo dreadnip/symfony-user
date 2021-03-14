@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}
+    <h1>Please sign in</h1>
+    <p>Nog geen account? <a href="{{ url('register') }}">Registreer hier</a></p>
+{% endblock %}
+
+{% block body %}
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {{ form_start(form)}}
+    {{ form_row(form.email)}}
+
+    {{ form_row(form.password)}}
+    <small class="form-text text-muted">
+        <a href="{{ url('forgot_password') }}">{{ 'action.forgot_password'|trans }}</a>
+    </small>
+
+    {{ form_rest(form)}}
+
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" name="_remember_me"> Remember me
+        </label>
+    </div>
+
+    <button type="submit">Sign in</button>
+
+    {{ form_end(form)}}
+{% endblock %}

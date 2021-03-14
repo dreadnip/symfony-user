@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}
+    <h1>Register</h1>
+{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.password) }}
+    {{ form_rest(form) }}
+
+    <button type="submit">Sign up</button>
+
+    {{ form_end(form)}}
+{% endblock %}
