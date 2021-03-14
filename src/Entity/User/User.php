@@ -69,6 +69,8 @@ class User implements UserInterface
         $this->roles = [];
         $this->confirmationToken = $this->generateToken();
         $this->enabled = false;
+        $this->passwordResetToken = null;
+        $this->passwordRequestedAt = null;
     }
 
     public function getId(): ?int
