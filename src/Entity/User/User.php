@@ -50,7 +50,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="boolean")
      */
-    private string $enabled;
+    private bool $enabled;
 
     /**
      * @ORM\Column(type="string", nullable=true)
