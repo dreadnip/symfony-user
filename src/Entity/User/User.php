@@ -3,6 +3,7 @@
 namespace App\Entity\User;
 
 use App\Repository\User\UserRepository;
+use App\ValueObject\User\Role;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -33,9 +34,14 @@ class User implements UserInterface
     private array $roles;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
-    private string $password;
+    private ?string $password;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private bool $enabled;
 
     /**
      * @ORM\Column(type="string", nullable=true)
@@ -48,11 +54,6 @@ class User implements UserInterface
     private ?DateTime $confirmedAt;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private bool $enabled;
-
-    /**
      * @ORM\Column(type="string", nullable=true)
      */
     private ?string $passwordResetToken;
@@ -63,22 +64,33 @@ class User implements UserInterface
     private ?DateTime $passwordRequestedAt;
 
     public function __construct(
-        string $email
+        string $email,
+        array $roles
     ) {
         $this->email = $email;
-        $this->roles = [];
-        $this->confirmationToken = $this->generateToken();
+        $this->password = null;
+        $this->roles = $roles;
         $this->enabled = false;
+        $this->confirmationToken = $this->generateToken();
+        $this->confirmedAt = null;
         $this->passwordResetToken = null;
         $this->passwordRequestedAt = null;
     }
 
-    public function getId(): ?int
+    public function update(
+        string $email,
+        array $roles
+    ): void {
+        $this->email = $email;
+        $this->roles = $roles;
+    }
+
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -97,17 +109,12 @@ class User implements UserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
+
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        $roles[] = Role::user();
+
 
         return array_unique($roles);
-    }
-
-    public function setRoles(array $roles): self
-    {
-        $this->roles = $roles;
-
-        return $this;
     }
 
     /**
@@ -132,9 +139,6 @@ class User implements UserInterface
     }
 
     /**
-     * Returning a salt is only needed, if you are not using a modern
-     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
-     *
      * @see UserInterface
      */
     public function getSalt(): ?string

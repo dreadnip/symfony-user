@@ -17,6 +17,9 @@
             </div>
         {% endfor %}
         {% block page_title %}{% endblock %}
+        <div class="toolbar">
+            {% block header_navigation %}{% endblock %}
+        </div>
         {% block body %}{% endblock %}
     </body>
 </html>

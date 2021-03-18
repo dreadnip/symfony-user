@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}
+    <h1>{{ 'Add a new user'|trans }} </h1>
+{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.roles) }}
+
+    <button type="submit">{{ 'Add'|trans }}</button>
+
+    {{ form_end(form) }}
+{% endblock %}

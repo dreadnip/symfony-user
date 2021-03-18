@@ -2,6 +2,7 @@
 
 namespace App\Controller\User;
 
+use App\Entity\User\User;
 use App\Form\User\LoginType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,7 @@ class LoginController extends AbstractController
     public function __invoke(
         AuthenticationUtils $authenticationUtils
     ): Response {
-        if ($this->getUser()) {
+        if ($this->getUser() instanceof User) {
             return $this->redirectToRoute('profile');
         }
 

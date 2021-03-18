@@ -12,9 +12,7 @@ class ProfileController extends AbstractController
      * @Route("/profile", name="profile")
      */
     public function __invoke(): Response {
-
-        return $this->render('user/profile.html.twig', [
-
-        ]);
+        dump($this->getUser());
+        return $this->render('user/profile.html.twig');
     }
 }

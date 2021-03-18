@@ -14,8 +14,5 @@ class UserDataTransferObject
      */
     public string $email;
 
-    /**
-     * @Assert\NotBlank()
-     */
-    public string $password;
+    public array $roles = [];
 }

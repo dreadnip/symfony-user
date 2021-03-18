@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Controller\User;
+namespace App\Controller\User\Admin;
 
-use App\Form\User\RegisterType;
+use App\Form\User\Admin\UserType;
 use App\Message\User\CreateUser;
-use App\Message\User\RegisterUser;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,17 +11,17 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class RegisterController extends AbstractController
+class AddUserController extends AbstractController
 {
     /**
-     * @Route("/register", name="register")
+     * @Route("/admin/users/add", name="user_add")
      */
     public function __invoke(
         Request $request,
         SessionInterface $session,
         TranslatorInterface $translator
     ): Response {
-        $form = $this->createForm(RegisterType::class, new RegisterUser());
+        $form = $this->createForm(UserType::class, new CreateUser());
 
         $form->handleRequest($request);
 
@@ -31,13 +30,13 @@ class RegisterController extends AbstractController
 
             $session->getBag('flashes')->add(
                 'success',
-                $translator->trans('User registered. Check your email to confirm your account.')
+                $translator->trans('User successfully added.')
             );
 
-            return $this->redirectToRoute('login');
+            return $this->redirectToRoute('user_overview');
         }
 
-        return $this->render('user/register.html.twig', [
+        return $this->render('user/admin/add.html.twig', [
             'form' => $form->createView(),
         ]);
     }

@@ -53,7 +53,7 @@ class SendPasswordResetHandler implements MessageHandlerInterface
         $email = (new TemplatedEmail())
             ->from($this->from)
             ->to(new Address($user->getEmail(), $user->getEmail()))
-            ->subject($this->translator->trans('account.mail.resrt.title'))
+            ->subject($this->translator->trans('account.mail.reset.title'))
             ->htmlTemplate('user/mails/reset.html.twig')
             ->context([
                 'resetLink' => $this->router->generate(

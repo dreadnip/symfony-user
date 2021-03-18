@@ -3,14 +3,14 @@
 namespace App\MessageHandler\User;
 
 use App\Entity\User\User;
-use App\Message\User\CreateUser;
+use App\Message\User\RegisterUser;
 use App\Message\User\SendConfirmation;
 use App\Repository\User\UserRepository;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-final class CreateUserHandler implements MessageHandlerInterface
+final class RegisterUserHandler implements MessageHandlerInterface
 {
     private UserRepository $userRepository;
     private UserPasswordEncoderInterface $passwordEncoder;
@@ -26,14 +26,16 @@ final class CreateUserHandler implements MessageHandlerInterface
         $this->bus = $bus;
     }
 
-    public function __invoke(CreateUser $message): void
+    public function __invoke(RegisterUser $message): void
     {
         $user = new User(
             $message->email,
             $message->roles
         );
 
-        $user->requestPassword();
+        $encodedPassword = $this->passwordEncoder->encodePassword($user, $message->password);
+
+        $user->setPassword($encodedPassword);
 
         $this->userRepository->add($user);
 

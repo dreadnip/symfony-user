@@ -7,31 +7,27 @@
     <body>
       <trans-unit id="2YSz45W" resname="account.mail.confirm.title">
         <source>account.mail.confirm.title</source>
-        <target>__account.mail.confirm.title</target>
+        <target>Foobar account confirmation</target>
       </trans-unit>
-      <trans-unit id="hd8nd7A" resname="account.mail.resrt.title">
-        <source>account.mail.resrt.title</source>
-        <target>__account.mail.resrt.title</target>
+      <trans-unit id="iuJF02Z" resname="account.mail.reset.title">
+        <source>account.mail.reset.title</source>
+        <target>Reset your Foobar password</target>
       </trans-unit>
-      <trans-unit id="JxT_Ayb" resname="account.mail.thanksForRegistering">
-        <source>account.mail.thanksForRegistering</source>
-        <target>__account.mail.thanksForRegistering</target>
+      <trans-unit id="aoQW.fj" resname="account.mail.welcome">
+        <source>account.mail.welcome</source>
+        <target>Welcome to foobar!</target>
       </trans-unit>
       <trans-unit id="R49Ub4I" resname="account.mail.confirmAccount">
         <source>account.mail.confirmAccount</source>
-        <target>__account.mail.confirmAccount</target>
-      </trans-unit>
-      <trans-unit id="_vYqvIO" resname="account.mail.linkDoesNotworkCopyLink">
-        <source>account.mail.linkDoesNotworkCopyLink</source>
-        <target>__account.mail.linkDoesNotworkCopyLink</target>
+        <target>Confirm account</target>
       </trans-unit>
       <trans-unit id="CFvXOs9" resname="account.mail.reset">
         <source>account.mail.reset</source>
-        <target>__account.mail.reset</target>
+        <target>Click the link below to reset your password.</target>
       </trans-unit>
       <trans-unit id="Bn6yTIX" resname="action.forgot_password">
         <source>action.forgot_password</source>
-        <target>__action.forgot_password</target>
+        <target>Reset password</target>
       </trans-unit>
       <trans-unit id="Yskrkpd" resname="Invalid confirmation token.">
         <source>Invalid confirmation token.</source>
@@ -96,6 +92,90 @@
       <trans-unit id="_TJnqhH" resname="Remember me">
         <source>Remember me</source>
         <target>Remember me</target>
+      </trans-unit>
+      <trans-unit id="DrhZDlt" resname="User successfully added.">
+        <source>User successfully added.</source>
+        <target>User successfully added.</target>
+      </trans-unit>
+      <trans-unit id="jZAFQ94" resname="User successfully disabled.">
+        <source>User successfully disabled.</source>
+        <target>User successfully disabled.</target>
+      </trans-unit>
+      <trans-unit id="V7JJ5vp" resname="User successfully edited.">
+        <source>User successfully edited.</source>
+        <target>User successfully edited.</target>
+      </trans-unit>
+      <trans-unit id="Bgcy7eV" resname="User successfully enabled.">
+        <source>User successfully enabled.</source>
+        <target>User successfully enabled.</target>
+      </trans-unit>
+      <trans-unit id="04EU15Y" resname="User is already confirmed.">
+        <source>User is already confirmed.</source>
+        <target>User is already confirmed.</target>
+      </trans-unit>
+      <trans-unit id="klOGGkq" resname="Email confirmation mail successfully sent">
+        <source>Email confirmation mail successfully sent</source>
+        <target>Email confirmation mail successfully sent</target>
+      </trans-unit>
+      <trans-unit id="UcWz6WZ" resname="Email confirmation mail successfully resent">
+        <source>Email confirmation mail successfully resent</source>
+        <target>Email confirmation mail successfully resent</target>
+      </trans-unit>
+      <trans-unit id="dBl1kiw" resname="Edit user %user%">
+        <source>Edit user %user%</source>
+        <target>Edit user %user%</target>
+      </trans-unit>
+      <trans-unit id="_PMOgxn" resname="Resend confirmation mail">
+        <source>Resend confirmation mail</source>
+        <target>Resend confirmation mail</target>
+      </trans-unit>
+      <trans-unit id="t_PkqkJ" resname="Disable">
+        <source>Disable</source>
+        <target>Disable</target>
+      </trans-unit>
+      <trans-unit id="U0Lgnyc" resname="Enable">
+        <source>Enable</source>
+        <target>Enable</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit id="awzJBNC" resname="Users">
+        <source>Users</source>
+        <target>Users</target>
+      </trans-unit>
+      <trans-unit id="sziFdoz" resname="Add a new user">
+        <source>Add a new user</source>
+        <target>Add a new user</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>Username</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Roles</target>
+      </trans-unit>
+      <trans-unit id=".gC2e23" resname="Confirmed">
+        <source>Confirmed</source>
+        <target>Confirmed</target>
+      </trans-unit>
+      <trans-unit id="ksHN.fT" resname="Enabled">
+        <source>Enabled</source>
+        <target>Enabled</target>
+      </trans-unit>
+      <trans-unit id="BbiNGPw" resname="Edit user">
+        <source>Edit user</source>
+        <target>Edit user</target>
+      </trans-unit>
+      <trans-unit id="n9coxmy" resname="Add">
+        <source>Add</source>
+        <target>Add</target>
+      </trans-unit>
+      <trans-unit id="YdWk_YD" resname="account.mail.resetPassowrd">
+        <source>account.mail.resetPassowrd</source>
+        <target>Reset password</target>
       </trans-unit>
     </body>
   </file>

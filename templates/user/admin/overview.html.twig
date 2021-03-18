@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}
+  <h1>{{ 'Users'|trans }}</h1>
+{% endblock %}
+
+{% block header_navigation %}
+  <a href="{{ path('user_add') }}">{{ 'Add a new user'|trans|capitalize }}</a>
+{% endblock %}
+
+{% block body %}
+  <table>
+    <thead>
+      <tr>
+        <th>{{ 'Username'|trans }}</th>
+        <th>{{ 'Roles'|trans }}</th>
+        <th>{{ 'Confirmed'|trans }}</th>
+        <th>{{ 'Enabled'|trans }}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <th>{{ user.username }}</th>
+          <td>{{ user.roles|join }}</td>
+          <td>
+              <input type="checkbox" {{ user.confirmed ? 'checked': '' }} disabled />
+            </td>
+          <td>
+            <input type="checkbox" {{ user.enabled ? 'checked': '' }} disabled />
+          </td>
+          <td>
+              <a href="{{ path('user_edit', {'user': user.id }) }}">
+                {{ 'Edit user'|trans }}
+              </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

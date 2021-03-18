@@ -3,7 +3,7 @@
 namespace App\Controller\User;
 
 use App\Entity\User\User;
-use App\Message\User\ConfirmUser;
+use App\Message\User\SendConfirmation;
 use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class ConfirmController extends AbstractController
+final class ResendConfirmationController extends AbstractController
 {
     /**
-     * @Route("/confirm/{token}", name="confirm")
+     * @Route("/resend-confirmation/{token}", name="resend_confirmation")
      */
     public function __invoke(
         string $token,
@@ -33,21 +33,9 @@ class ConfirmController extends AbstractController
             return $this->redirectToRoute('login');
         }
 
-        $this->dispatchMessage(new ConfirmUser($user));
+        $this->dispatchMessage(new SendConfirmation($user));
 
-        $session->getBag('flashes')->add(
-            'success',
-            $translator->trans('User confirmed.')
-        );
-
-        /*
-         * When a new user is created from the back-end, he has to both
-         * confirm his account and set a password, so we redirect them straight
-         * to the password reset page after confirming.
-         */
-        if ($user->getPasswordResetToken() !== null) {
-            $this->redirectToRoute('reset_password', ['token' => $user->getPasswordResetToken()]);
-        }
+        $session->getBag('flashes')->add('success', $translator->trans('Email confirmation mail successfully resent'));
 
         return $this->redirectToRoute('login');
     }
