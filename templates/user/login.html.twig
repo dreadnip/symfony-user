@@ -13,9 +13,7 @@
     {{ form_row(form.email)}}
     {{ form_row(form.password)}}
 
-    <small class="form-text text-muted">
-        <a href="{{ url('forgot_password') }}">{{ 'I forgot my password'|trans }}</a>
-    </small>
+    <a href="{{ url('forgot_password') }}">{{ 'I forgot my password'|trans }}</a>
 
     {{ form_rest(form)}}
 

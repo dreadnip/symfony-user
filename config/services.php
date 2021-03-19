@@ -3,8 +3,6 @@
 declare(strict_types=1);
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symfony\Component\Security\Core\Encoder\SodiumPasswordEncoder;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 return function (ContainerConfigurator $container) {
     $parameters = $container->parameters();
@@ -25,8 +23,4 @@ return function (ContainerConfigurator $container) {
     $services
         ->load('App\\Controller\\', __DIR__ . '/../src/Controller')
         ->tag('controller.service_arguments');
-
-    $services->set(SodiumPasswordEncoder::class);
-
-    $services->alias(UserPasswordEncoderInterface::class, SodiumPasswordEncoder::class)->public();
 };
