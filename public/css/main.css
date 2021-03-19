@@ -33,9 +33,16 @@ button {
 input, button {
     font-style: inherit;
     font-size: inherit;
-    padding: .2rem .5rem
+    padding: .2rem .5rem;
 }
 
 form > div + div {
     margin-top: 1rem;
+}
+
+.alert {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: solid 1px var(--mine-shaft);
+    display: inline-block;
 }
