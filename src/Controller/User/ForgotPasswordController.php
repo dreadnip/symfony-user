@@ -14,7 +14,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class ForgotPasswordController extends AbstractController
 {
     /**
-     * @Route("/forgot-password", name="forgot_password")
+     * @Route("/password-reset", name="forgot_password")
      */
     public function __invoke(
         Request $request,
@@ -26,14 +26,7 @@ class ForgotPasswordController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->dispatchMessage($form->getData());
-
-            $session->getBag('flashes')->add(
-                'success',
-                $translator->trans('Password reset sent.')
-            );
-
-            return $this->redirectToRoute('login');
+            $this->dispatchMessage($form->getData());;
         }
 
         return $this->render('user/forgot.html.twig', [

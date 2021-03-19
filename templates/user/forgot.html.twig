@@ -1,16 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block page_title %}
-    <h1>{{ 'Forgot password'|trans }}</h1>
+    <h1>{{ 'Reset your password'|trans }}</h1>
 {% endblock %}
 
 {% block body %}
-    {{ form_start(form)}}
-    {{ form_errors(form)}}
-    {{ form_row(form.email)}}
-    {{ form_rest(form)}}
+    {% if form.vars.submitted and form.vars.valid %}
+        <p>{{ 'Check your email for a link to reset your password. If it doesn’t appear within a few minutes, check your spam folder.'|trans }}</p>
+        <a href="{{ url('login') }}">{{ 'Return to sign in'|trans }}</a>
+    {% else %}
+        <p>{{ 'Enter your user account\'s verified email address and we will send you a password reset link.'|trans }}</p>
 
-    <button type="submit">{{ 'Submit'|trans }}</button>
+        {{ form_start(form)}}
+        {{ form_errors(form)}}
+        {{ form_row(form.email)}}
+        {{ form_rest(form)}}
 
-    {{ form_end(form)}}
+        <button type="submit">{{ 'Send password reset email'|trans }}</button>
+
+        {{ form_end(form)}}
+    {% endif %}
 {% endblock %}

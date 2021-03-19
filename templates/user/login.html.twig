@@ -2,7 +2,6 @@
 
 {% block page_title %}
     <h1>{{ 'Sign in'|trans }}</h1>
-    <p>{{ 'No account?'|trans }} <a href="{{ url('register') }}">{{ 'Sign up here'|trans }}</a></p>
 {% endblock %}
 
 {% block body %}
@@ -29,4 +28,6 @@
     <button type="submit">{{ 'Sign in'|trans }}</button>
 
     {{ form_end(form)}}
+
+    <p>{{ 'No account?'|trans }} <a href="{{ url('register') }}">{{ 'Create an account'|trans }}</a></p>
 {% endblock %}
