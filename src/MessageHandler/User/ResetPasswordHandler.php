@@ -25,8 +25,6 @@ final class ResetPasswordHandler implements MessageHandlerInterface
 
         $message->getUser()->setPassword($encodedPassword);
 
-        $message->getUser()->enable();
-
         $this->userRepository->save();
     }
 }

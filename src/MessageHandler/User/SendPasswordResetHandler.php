@@ -46,8 +46,6 @@ class SendPasswordResetHandler implements MessageHandlerInterface
 
         $user->requestPassword();
 
-        $user->disable();
-
         $this->userRepository->save();
 
         $email = (new TemplatedEmail())

@@ -3,6 +3,7 @@
 namespace App\Security;
 
 use App\Entity\User\User;
+use App\Repository\User\UserRepository;
 use App\Security\Exception\UnconfirmedAccountException;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Exception\DisabledException;
@@ -14,27 +15,19 @@ final class UserChecker implements UserCheckerInterface
 {
     private TranslatorInterface $translator;
     private RouterInterface $router;
+    private UserRepository $userRepository;
 
     public function __construct(
         TranslatorInterface $translator,
-        RouterInterface $router
+        RouterInterface $router,
+        UserRepository $userRepository
     ) {
         $this->translator = $translator;
         $this->router = $router;
+        $this->userRepository  = $userRepository;
     }
 
     public function checkPreAuth(UserInterface $user): void
-    {
-        if (!$user instanceof User) {
-            return;
-        }
-
-        if (!$user->isEnabled()) {
-            throw new DisabledException('This account has been disabled.');
-        }
-    }
-
-    public function checkPostAuth(UserInterface $user): void
     {
         if (!$user instanceof User) {
             return;
@@ -54,6 +47,23 @@ final class UserChecker implements UserCheckerInterface
                     ]
                 )
             );
+        }
+
+        if (!$user->isEnabled()) {
+            throw new DisabledException('This account has been disabled.');
+        }
+    }
+
+    public function checkPostAuth(UserInterface $user): void
+    {
+        if (!$user instanceof User) {
+            return;
+        }
+
+        if ($user->getPasswordResetToken() !== null) {
+            $user->erasePasswordResetRequest();
+
+            $this->userRepository->save();
         }
     }
 }

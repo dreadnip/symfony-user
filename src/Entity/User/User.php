@@ -129,13 +129,7 @@ class User implements UserInterface
     {
         $this->password = $password;
 
-        if ($this->passwordResetToken !== null) {
-            $this->passwordResetToken = null;
-        }
-
-        if ($this->passwordRequestedAt !== null) {
-            $this->passwordRequestedAt = null;
-        }
+        $this->erasePasswordResetRequest();
     }
 
     /**
@@ -189,6 +183,12 @@ class User implements UserInterface
     {
         $this->passwordResetToken = $this->generateToken();
         $this->passwordRequestedAt = new DateTime();
+    }
+
+    public function erasePasswordResetRequest(): void
+    {
+        $this->passwordResetToken = null;
+        $this->passwordRequestedAt = null;
     }
 
     public function enable(): void
