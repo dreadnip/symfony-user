@@ -30,7 +30,7 @@ final class RegisterType extends AbstractType
                 [
                     'type' => PasswordType::class,
                     'first_options'  => ['label' => 'Password'],
-                    'second_options' => ['label' => 'Repeat password'],
+                    'second_options' => ['label' => 'Confirm password'],
                 ]
             );
     }

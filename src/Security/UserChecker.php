@@ -30,7 +30,7 @@ final class UserChecker implements UserCheckerInterface
         }
 
         if (!$user->isEnabled()) {
-            throw new DisabledException('Bad credentials.');
+            throw new DisabledException('This account has been disabled.');
         }
     }
 
@@ -43,7 +43,7 @@ final class UserChecker implements UserCheckerInterface
         if (!$user->isConfirmed()) {
             throw new UnconfirmedAccountException(
                 $this->translator->trans(
-                    'You have not confirmed your e-mail address. <a href="%requestConfirmationUrl%">Resend the confirmation mail</a>',
+                    'You have not confirmed your email address. <a href="%requestConfirmationUrl%">Resend the confirmation mail</a>',
                     [
                         '%requestConfirmationUrl%' => $this->router->generate(
                             'resend_confirmation',

@@ -28,13 +28,6 @@ class RegisterController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->dispatchMessage($form->getData());
-
-            $session->getBag('flashes')->add(
-                'success',
-                $translator->trans('User registered. Check your email to confirm your account.')
-            );
-
-            return $this->redirectToRoute('login');
         }
 
         return $this->render('user/register.html.twig', [

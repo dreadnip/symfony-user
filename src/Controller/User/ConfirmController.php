@@ -27,7 +27,7 @@ class ConfirmController extends AbstractController
         if (!$user instanceof User) {
             $session->getBag('flashes')->add(
                 'error',
-                $translator->trans('Invalid confirmation token.')
+                $translator->trans('It looks like you clicked on an invalid account activation link. Please try again.')
             );
 
             return $this->redirectToRoute('login');
@@ -37,7 +37,7 @@ class ConfirmController extends AbstractController
 
         $session->getBag('flashes')->add(
             'success',
-            $translator->trans('User confirmed.')
+            $translator->trans('Account activated successfully. You can now login!')
         );
 
         /*

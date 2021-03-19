@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --mine-shaft: #212121;
+    --mercury: #fafafa;
+}
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-size: 1.25em;
+    color: var(--mine-shaft);
+    overflow-y: scroll;
+    line-height: 1.5;
+    padding: 2rem;
+    background-color: var(--mercury);
+    max-width: 50rem;
+}
+
+label {
+    display: block
+}
+
+button {
+    display: block;
+    margin: 1rem 0;
+}
+
+input, button {
+    font-style: inherit;
+    font-size: inherit;
+    padding: .2rem .5rem
+}
+
+form > div + div {
+    margin-top: 1rem;
+}

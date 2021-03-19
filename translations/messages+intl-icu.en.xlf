@@ -53,9 +53,9 @@
         <source>User registered. Check your email to confirm your account.</source>
         <target>User registered. Check your email to confirm your account.</target>
       </trans-unit>
-      <trans-unit id="u3I07BJ" resname="Register">
-        <source>Register</source>
-        <target>Register</target>
+      <trans-unit id="u3I07BJ" resname="Create an account">
+        <source>Create an account</source>
+        <target>Create an account</target>
       </trans-unit>
       <trans-unit id="XiuOllA" resname="Sign up">
         <source>Sign up</source>
@@ -176,6 +176,50 @@
       <trans-unit id="YdWk_YD" resname="account.mail.resetPassowrd">
         <source>account.mail.resetPassowrd</source>
         <target>Reset password</target>
+      </trans-unit>
+      <trans-unit id="k.6LE_R" resname="It looks like you clicked on an invalid password reset link. Please try again.">
+        <source>It looks like you clicked on an invalid password reset link. Please try again.</source>
+        <target>It looks like you clicked on an invalid password reset link. Please try again.</target>
+      </trans-unit>
+      <trans-unit id="DmZT.A." resname="New password set successfully.">
+        <source>New password set successfully.</source>
+        <target>New password set successfully.</target>
+      </trans-unit>
+      <trans-unit id="fdBNKO6" resname="Check your email for a link to confirm your account. If it doesn’t appear within a few minutes, check your spam folder.">
+        <source>Check your email for a link to confirm your account. If it doesn’t appear within a few minutes, check your spam folder.</source>
+        <target>Check your email for a link to confirm your account. If it doesn’t appear within a few minutes, check your spam folder.</target>
+      </trans-unit>
+      <trans-unit id="hQQFTxQ" resname="Return to sign in">
+        <source>Return to sign in</source>
+        <target>Return to sign in</target>
+      </trans-unit>
+      <trans-unit id="OaUZyZK" resname="Check your email for a link to reset your password. If it doesn’t appear within a few minutes, check your spam folder.">
+        <source>Check your email for a link to reset your password. If it doesn’t appear within a few minutes, check your spam folder.</source>
+        <target>Check your email for a link to reset your password. If it doesn’t appear within a few minutes, check your spam folder.</target>
+      </trans-unit>
+      <trans-unit id="O_8YvXL" resname="Enter your user account's verified email address and we will send you a password reset link.">
+        <source>Enter your user account's verified email address and we will send you a password reset link.</source>
+        <target>Enter your user account's verified email address and we will send you a password reset link.</target>
+      </trans-unit>
+      <trans-unit id="y2XxXvP" resname="Send password reset email">
+        <source>Send password reset email</source>
+        <target>Send password reset email</target>
+      </trans-unit>
+      <trans-unit id="imodqOy" resname="Change your password">
+        <source>Change your password</source>
+        <target>Change your password</target>
+      </trans-unit>
+      <trans-unit id="P5yZH2O" resname="Change password">
+        <source>Change password</source>
+        <target>Change password</target>
+      </trans-unit>
+      <trans-unit id="rLdPYa." resname="New to x?">
+        <source>New to x?</source>
+        <target>New to x?</target>
+      </trans-unit>
+      <trans-unit id="hgM.daT" resname="Create an account">
+        <source>Create an account</source>
+        <target>Create an account</target>
       </trans-unit>
     </body>
   </file>
