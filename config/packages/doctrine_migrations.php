@@ -8,7 +8,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->extension(
         'doctrine_migrations', [
             'migrations_paths' => [
-                'DoctrineMigrations' => __DIR__ . '/migrations'
+                'DoctrineMigrations' => __DIR__ . '/../../migrations'
             ]
         ]
     );
