@@ -14,7 +14,7 @@ final class ChangePasswordHandler implements MessageHandlerInterface
 
     public function __construct(
         UserRepository $userRepository,
-        UserPasswordEncoderInterface $passwordEncoder,
+        UserPasswordEncoderInterface $passwordEncoder
     ) {
         $this->userRepository = $userRepository;
         $this->passwordEncoder = $passwordEncoder;

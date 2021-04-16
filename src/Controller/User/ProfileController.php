@@ -17,7 +17,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class ProfileController extends AbstractController
 {
     /**
-     * @Route("/profile", name="profile")
+     * @Route("/profile", name="user_profile")
      */
   public function __invoke(
     Request $request,
@@ -33,10 +33,8 @@ class ProfileController extends AbstractController
 
       $session->getBag('flashes')->add(
         'success',
-        $translator->trans('User successfully edited.')
+        $translator->trans('Password successfully edited.')
       );
-
-      return $this->redirectToRoute('user_overview');
     }
 
     return $this->render('user/profile.html.twig', [
