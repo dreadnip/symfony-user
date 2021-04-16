@@ -4,4 +4,13 @@
 
 {% block body %}
     Hello {{ app.user.username }}
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.password) }}
+    {{ form_rest(form) }}
+
+    <button type="submit">{{ 'Update password'|trans }}</button>
+
+    {{ form_end(form)}}
 {% endblock %}
