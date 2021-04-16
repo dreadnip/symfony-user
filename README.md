@@ -2,10 +2,16 @@
 
 **!WIP!**
 
-User management solution for Symfony 5.2. Includes new Authenticator login, remember me, forgot password + reset, confirmation email.
+User management solution for Symfony 5.2. Includes new Authenticator login, remember me, forgot password + reset, confirmation email, basic user CRUD for admins
 
-Note that this is a personal practice project intended to learn the Symfony 5.2 security changes and play with some ideas. It is not a finished bundle and should not be used by anyone. It is an example implementation.
+The code in this repository is not guaranteed to work. It can be used as inspiration, reference or straight up copied.
 
 To do:
-* Admin user CRUD
-* Fix the UserChecker for unconfirmed or disabled accounts
+* Clean up templates for use with Bootstrap 5
+
+How to use:
+* Copy each `User` folder from the respective `src/` folder into your own project.
+* If you want to use the templates, copy `template/user` into your own project.
+* Copy our `config/packages/security.yaml` into your own project.
+* Copy either the SQLite or the MySQL migration and run it.
+* (optional) Copy the translations.
