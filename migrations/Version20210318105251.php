@@ -14,7 +14,7 @@ final class Version20210318105251 extends AbstractMigration
 {
     public function getDescription() : string
     {
-        return 'Set up the user table';
+        return 'Set up the user table for SQLite';
     }
 
     public function up(Schema $schema) : void
