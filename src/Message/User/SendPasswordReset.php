@@ -10,5 +10,5 @@ class SendPasswordReset
      * @Assert\Email()
      * @Assert\NotBlank()
      */
-    public string $email;
+    public ?string $email = null;
 }
