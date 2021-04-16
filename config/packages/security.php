@@ -46,10 +46,10 @@ return function (ContainerConfigurator $containerConfigurator): void {
             ['path' => '^/admin', 'roles' => 'ROLE_ADMIN'],
             ['path' => '^/profile', 'roles' => 'ROLE_USER'],
             ['path' => '^/login', 'roles' => 'PUBLIC_ACCESS'],
+            ['path' => '^/resend-confirmation', 'roles' => 'PUBLIC_ACCESS'],
             ['path' => '^/register', 'roles' => 'PUBLIC_ACCESS'],
             ['path' => '^/confirm', 'roles' => 'PUBLIC_ACCESS'],
-            ['path' => '^/forgot-password', 'roles' => 'PUBLIC_ACCESS'],
-            ['path' => '^/reset-password', 'roles' => 'PUBLIC_ACCESS'],
+            ['path' => '^/password-reset', 'roles' => 'PUBLIC_ACCESS'],
         ],
     ]);
 };
