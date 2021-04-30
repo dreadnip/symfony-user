@@ -22,7 +22,7 @@ class ConfirmController extends AbstractController
         UserRepository $userRepository,
         TranslatorInterface $translator
     ): Response {
-        $user = $userRepository->findOneBy(['confirmationToken' => $token]);
+        $user = $userRepository->checkConfirmationToken($token);
 
         if (!$user instanceof User) {
             $session->getBag('flashes')->add(
@@ -37,7 +37,7 @@ class ConfirmController extends AbstractController
 
         $session->getBag('flashes')->add(
             'success',
-            $translator->trans('Account activated successfully. You can now login!')
+            $translator->trans('Account activated successfully.')
         );
 
         /*
