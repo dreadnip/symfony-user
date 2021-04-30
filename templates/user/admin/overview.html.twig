@@ -23,7 +23,7 @@
       {% for user in users %}
         <tr>
           <th>{{ user.username }}</th>
-          <td>{{ user.roles|join }}</td>
+          <td>{{ user.roles|join(', ') }}</td>
           <td>
               <input type="checkbox" {{ user.confirmed ? 'checked': '' }} disabled />
             </td>
