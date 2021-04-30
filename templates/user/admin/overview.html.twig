@@ -17,6 +17,7 @@
         <th>{{ 'Confirmed'|trans }}</th>
         <th>{{ 'Enabled'|trans }}</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -34,6 +35,11 @@
               <a href="{{ path('user_edit', {'user': user.id }) }}">
                 {{ 'Edit user'|trans }}
               </a>
+          </td>
+          <td>
+            <a href="{{ path('user_profile', {'_switch_user': user.username }) }}">
+              {{ 'Switch to user'|trans }}
+            </a>
           </td>
         </tr>
       {% endfor %}

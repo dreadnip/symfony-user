@@ -6,6 +6,9 @@
         <link rel="stylesheet" type="text/css" href="/css/main.css">
     </head>
     <body>
+      {% if is_granted('IS_IMPERSONATOR') %}
+        <a href="{{ impersonation_exit_path(path('user_overview') ) }}">{{ 'Exit impersonation'|trans }}</a>
+      {% endif %}
         {% for message in app.flashes('success') %}
             <div class="alert alert-notice">
                 {{ message }}
