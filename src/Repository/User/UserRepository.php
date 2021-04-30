@@ -47,7 +47,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     public function checkConfirmationToken(string $confirmationToken): ?User
     {
         $now = new DateTime();
-        $validDuration = new DateInterval('PT4H'); // 4 hours
+        $validDuration = new DateInterval('PT2D'); // 48 hours
         $now->sub($validDuration);
 
         try {
